@@ -13,8 +13,8 @@ import Link from 'next/link';
 import { createInvoice } from "@/app/lib/actions";
 import { useFormState } from 'react-dom';
 
+const initialState = { message: null, errors: {} };
 export default function Form({ customers }: { customers: CustomerField[] }) {
-  const initialState = { message: null, errors: {} };
   const [state, dispatch] = useFormState(createInvoice, initialState);
   return (
     <form action={dispatch} aria-describedby="form-error">
